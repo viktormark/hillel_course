@@ -11,7 +11,7 @@ B = float(input("enter b: "))
 C = float(input("enter c: "))
 
 D = B ** 2 - 4 * A * C
-print(D)
+#print(D)
 
 if D < 0:
     raise DiscriminantError("рівняння не має розвязків")
