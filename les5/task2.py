@@ -5,6 +5,7 @@
 class DiscriminantError(Exception):
     pass
 
+
 A = float(input("enter a: "))
 B = float(input("enter b: "))
 C = float(input("enter c: "))
