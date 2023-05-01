@@ -9,7 +9,7 @@ def check_power_of_two(n):
         print("No")
 
 
-check_power_of_two(8)
+#check_power_of_two(8)
 
 
 # 1. Дано натуральне число N. Виведіть слово YES, якщо число N є точним ступенем двійки,
