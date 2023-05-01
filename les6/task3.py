@@ -23,7 +23,7 @@ def fermat(p):
 
 # print(fermat(2))
 # print(fermat(7))
-print(fermat(47))
+#print(fermat(47))
 # print("--")
 # print(fermat(4))
 # print(fermat(10))
