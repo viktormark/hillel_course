@@ -17,7 +17,7 @@ def change_list(l):
         print("should be more then 2")
 
 
-print(change_list([1, 2, 3, 4, 5]))
+#print(change_list([1, 2, 3, 4, 5]))
 # print(change_list([1,2,3,4,5,8,4,0]))
 # print(change_list(["1","2","3","4","5"]))
 
