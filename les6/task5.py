@@ -10,4 +10,4 @@ def to_dict(lst):
     return dict
 
 
-print(to_dict([1, "str", 9, "name"]))
+#print(to_dict([1, "str", 9, "name"]))
