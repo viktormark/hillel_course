@@ -1,0 +1,2 @@
+New data to write in file
+Some text to add to the file
