@@ -4,7 +4,12 @@
 # Зробіть так, щоб ключ 'physics' посилався на список рядків зі значеннями 'nuclear physics', 'optics' і 'thermodynamics'.
 # Решта ключів повинні посилатися на порожні словники. Виведіть на екран ключі subjects['science'] і значення subjects['science']['physics'].
 
-
+# {
+#  'science': {'biology': {},
+#              'computer science': {},
+#              'physics': ['nuclear physics', 'optics', 'thermodynamics']}},
+#   'humanities': {},
+#   'public': {}
 
 subjects = {}
 subjects['science'] = {}
@@ -13,6 +18,7 @@ subjects['science']['computer science'] = {}
 subjects['science']['biology'] = {}
 subjects['humanities'] = {}
 subjects['public'] = {}
+
 print(subjects)
 print(subjects['science'].keys())
 print(subjects['science']['physics'])
