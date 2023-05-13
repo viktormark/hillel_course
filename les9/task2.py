@@ -1,17 +1,29 @@
+# Знайти найуспішнішого менеджера за підсумковою сумою продажів.
+# Як відповідь потрібно через пробыл вказати спершу його ім'я, потім прізвище і після загальну суму його продажів.Файл manager_sales.json
+
 import json
+
 
 with open("manager_sales.json") as l:
     templates = json.load(l)
 
-f_name = ""
-l_name = ""
-res = 0
+manager = ""
+result = 0
 
 for i in templates:
-    for j in i["cars"]:
-        if len(i["cars"]) > res:
-            res = len(i["cars"])
-            f_name = i["manager"]["first_name"]
-            l_name = i["manager"]["last_name"]
+    sales = 0
+    f_name = i["manager"]["first_name"]
+    l_name = i["manager"]["last_name"]
 
-print(f"{f_name} {l_name} sold the most cars: {res}  ")
+    for j in i["cars"]:
+        sales = sales + j["price"]
+    if sales > result:
+        result = sales
+        manager = f_name + " " + l_name
+
+
+print(f"{manager}  {result}  ")
+
+
+
+
