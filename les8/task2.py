@@ -15,24 +15,14 @@ class Triangle:
         self.point3 = point3
 
     def calculate_area(self):
-        if self.validate_coordinates():  # Формула Гаусса
-            area = abs((self.point1.x * (self.point2.y - self.point3.y) +
-                        self.point2.x * (self.point3.y - self.point1.y) +
-                        self.point3.x * (self.point1.y - self.point2.y)) / 2)
-            return area
-        else:
-            return "неправильные координаты треугольника"
-
-    def validate_coordinates(self):
-        # Если площадь равна 0, то точки лежат на одной прямой.
         area = abs((self.point1.x * (self.point2.y - self.point3.y) +
                     self.point2.x * (self.point3.y - self.point1.y) +
                     self.point3.x * (self.point1.y - self.point2.y)) / 2)
 
-        if area == 0:
-            return False
+        if area <= 0:
+            return "Неправильные координаты треугольника"
         else:
-            return True
+            return area
 
 
 class Square:
@@ -48,8 +38,8 @@ class Square:
         return area
 
 
-point1 = Point(6, 5)
-point2 = Point(4, 4)
+point1 = Point(0, 0)
+point2 = Point(0, 0)
 point3 = Point(3, 5)
 point4 = Point(4, 9)
 
