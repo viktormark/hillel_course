@@ -20,7 +20,7 @@ def get_starship():
 
 result = get_starship()
 
-if result is not None:
+if result:
     print("\nStarship: \n")
     print(f"name: {result['name']}")
     print(f"starship_class: {result['starship_class']}")
