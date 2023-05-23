@@ -14,8 +14,6 @@ def get_starship():
 
     if response.status_code == 200:
         return response.json()
-    else:
-        return None
 
 
 result = get_starship()
