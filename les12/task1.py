@@ -36,5 +36,3 @@ def main():
 if __name__ == '__main__':
     main()
 
-#python les12/task1.py --help
-#python les12/task1.py -a=1 -b=6 -c=1
