@@ -3,12 +3,11 @@ import time
 from selenium.webdriver.common.by import By
 
 
-# pytest test_globalsqa.py -v
+# pytest les17/test_globalsqa.py -v
 
 class TestCustomerLogin:
 
-    def test_login(self, setup):
-        driver = setup
+    def test_login(self, driver):
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login")
         driver.find_element(By.CSS_SELECTOR, ".center:nth-child(1) > .btn").click()
         driver.find_element(By.ID, "userSelect").click()
@@ -17,8 +16,7 @@ class TestCustomerLogin:
         text = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div/div[1]/strong/span")
         assert "Hermoine Granger" == text.text
 
-    def test_logout(self, setup):
-        driver = setup
+    def test_logout(self, driver):
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login")
         driver.find_element(By.CSS_SELECTOR, ".center:nth-child(1) > .btn").click()
         driver.find_element(By.ID, "userSelect").click()
@@ -30,8 +28,7 @@ class TestCustomerLogin:
 
 
 class TestWithdrawn:
-    def test_successful_withdrawn(self, setup):
-        driver = setup
+    def test_successful_withdrawn(self, driver):
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login")
         driver.find_element(By.CSS_SELECTOR, ".center:nth-child(1) > .btn").click()
         driver.find_element(By.ID, "userSelect").click()
@@ -44,8 +41,7 @@ class TestWithdrawn:
         text = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div/div[4]/div/span")
         assert "Transaction successful" == text.text
 
-    def test_failed_withdrawn(self, setup):
-        driver = setup
+    def test_failed_withdrawn(self, driver):
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login")
         driver.find_element(By.CSS_SELECTOR, ".center:nth-child(1) > .btn").click()
         driver.find_element(By.ID, "userSelect").click()
@@ -60,47 +56,28 @@ class TestWithdrawn:
 
 
 class TestManager:
-    def test_add_customer(self, setup):
+    def test_add_customer(self, driver):
         name = "fname"
-        driver = setup
         driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/")
         driver.set_window_size(1451, 1020)
-        driver.find_element(By.CSS_SELECTOR, "body > div.ng-scope > div > div.ng-scope > div > div.borderM.box.padT20 > div:nth-child(3) > button").click()
-        driver.find_element(By.CSS_SELECTOR, "body > div.ng-scope > div > div.ng-scope > div > div.center > button:nth-child(1)").click()
+        driver.find_element(By.CSS_SELECTOR,
+                            "body > div.ng-scope > div > div.ng-scope > div > div.borderM.box.padT20 > div:nth-child(3) > button").click()
+        driver.find_element(By.CSS_SELECTOR,
+                            "body > div.ng-scope > div > div.ng-scope > div > div.center > button:nth-child(1)").click()
 
-        driver.find_element(By.CSS_SELECTOR, "body > div.ng-scope > div > div.ng-scope > div > div.ng-scope > div > div > form > div:nth-child(1) > input").send_keys(name)
+        driver.find_element(By.CSS_SELECTOR,
+                            "body > div.ng-scope > div > div.ng-scope > div > div.ng-scope > div > div > form > div:nth-child(1) > input").send_keys(
+            name)
         driver.find_element(By.CSS_SELECTOR, ".form-group:nth-child(2) > .form-control").send_keys("lname")
-        driver.find_element(By.CSS_SELECTOR, "body > div.ng-scope > div > div.ng-scope > div > div.ng-scope > div > div > form > div:nth-child(3) > input").send_keys("9090")
-        driver.find_element(By.CSS_SELECTOR, "body > div.ng-scope > div > div.ng-scope > div > div.ng-scope > div > div > form > button").click()
+        driver.find_element(By.CSS_SELECTOR,
+                            "body > div.ng-scope > div > div.ng-scope > div > div.ng-scope > div > div > form > div:nth-child(3) > input").send_keys(
+            "9090")
+        driver.find_element(By.CSS_SELECTOR,
+                            "body > div.ng-scope > div > div.ng-scope > div > div.ng-scope > div > div > form > button").click()
         alert = driver.switch_to.alert
         alert.accept()
-        driver.find_element(By.CSS_SELECTOR, "body > div.ng-scope > div > div.ng-scope > div > div.center > button:nth-child(3)").click()
+        driver.find_element(By.CSS_SELECTOR,
+                            "body > div.ng-scope > div > div.ng-scope > div > div.center > button:nth-child(3)").click()
         driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div/div[2]/div/form/div/div/input").send_keys(name)
         text = driver.find_element(By.XPATH, "/html/body/div[1]/div/div[2]/div/div[2]/div/div/table/tbody/tr/td[1]")
         assert name == text.text
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

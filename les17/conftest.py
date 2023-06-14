@@ -5,7 +5,7 @@ from selenium import webdriver
 
 
 @pytest.fixture
-def setup():
+def driver():
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.implicitly_wait(10)
     yield driver

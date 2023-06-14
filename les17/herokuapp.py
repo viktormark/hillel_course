@@ -2,9 +2,8 @@ import time
 
 from selenium.webdriver.common.by import By
 
-
-def test_add_remove_elements(setup):
-    driver = setup
+# pytest les17/herokuapp.py -v
+def test_add_remove_elements(driver):
     driver.get("http://the-internet.herokuapp.com/")
     driver.find_element(By.XPATH, '//*[@id="content"]/ul/li[2]/a').click()
 
@@ -19,10 +18,9 @@ def test_add_remove_elements(setup):
     assert len(buttons) == 1
 
 
-def test_authentication(setup):
+def test_authentication(driver):
     username = "tomsmith"
     password = "SuperSecretPassword!"
-    driver = setup
     driver.get("http://the-internet.herokuapp.com/")
     driver.find_element(By.XPATH, '//*[@id="content"]/ul/li[21]/a').click()
     driver.find_element(By.XPATH, '//*[@id="username"]').send_keys(username)
