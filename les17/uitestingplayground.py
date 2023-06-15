@@ -1,13 +1,19 @@
 import time
 
+import allure
+import pytest
 from selenium.webdriver.common.by import By
+
 
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
 
-# pytest les17/uitestingplayground.py -v
+
+# pytest uitestingplayground.py -v --alluredir=allure-results
+# allure serve allure-results
 
 
+@pytest.mark.skip()
 def test_click(driver):
     driver.get("http://uitestingplayground.com/")
     driver.find_element(By.XPATH, "//*[@id=\"overview\"]/div/div[2]/div[3]/h3/a").click()
@@ -24,6 +30,8 @@ def test_click(driver):
     assert button_color == expected_color
 
 
+@allure.description("Record setting text into the input field and pressing the button.")
+@allure.severity(allure.severity_level.BLOCKER)
 def test_text_input(driver):
     name = "new name"
     driver.get("http://uitestingplayground.com/")
@@ -34,6 +42,7 @@ def test_text_input(driver):
     assert button.text == name
 
 
+@allure.description("Record 2 consecutive link clicks.")
 def test_mouse_over(driver):
     driver.get("http://uitestingplayground.com/")
     driver.find_element(By.XPATH, "//*[@id='overview']/div/div[4]/div[3]/h3/a").click()
@@ -41,4 +50,3 @@ def test_mouse_over(driver):
     driver.find_element(By.XPATH, "/html/body/section/div/div[1]/a").click()
     text = driver.find_element(By.XPATH, "//*[@id='clickCount']")
     assert text.text == "2"
-

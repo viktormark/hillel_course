@@ -1,8 +1,11 @@
-import time
-
+import allure
 from selenium.webdriver.common.by import By
 
-# pytest les17/herokuapp.py -v
+
+# pytest herokuapp.py -v --alluredir=allure-results
+# allure serve allure-results
+
+@allure.description("Add and Remove buttons")
 def test_add_remove_elements(driver):
     driver.get("http://the-internet.herokuapp.com/")
     driver.find_element(By.XPATH, '//*[@id="content"]/ul/li[2]/a').click()
@@ -18,6 +21,8 @@ def test_add_remove_elements(driver):
     assert len(buttons) == 1
 
 
+@allure.description("Login Page")
+@allure.severity(allure.severity_level.CRITICAL)
 def test_authentication(driver):
     username = "tomsmith"
     password = "SuperSecretPassword!"
