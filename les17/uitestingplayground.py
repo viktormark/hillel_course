@@ -13,6 +13,7 @@ from selenium.webdriver.common.by import By
 # allure serve allure-results
 
 
+
 @pytest.mark.skip()
 def test_click(driver):
     driver.get("http://uitestingplayground.com/")
@@ -23,6 +24,7 @@ def test_click(driver):
 
     # button = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//*[@id=\"badButton\"]")))
     # button.click()
+
     time.sleep(1)
 
     button_color = button.value_of_css_property("background-color")
