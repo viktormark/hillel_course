@@ -5,3 +5,6 @@ class Base:
 
     def open(self, url):
         self.driver.get(url)
+
+    def find(self, locator_type, locator_value):
+        return self.driver.find_element(locator_type, locator_value)
