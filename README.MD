@@ -1,0 +1,22 @@
+- les2: if/else statement
+- les3: String and List
+- les4: Dict,Loops
+- les5: Try except
+- les6: Functions
+- les7: Files and filesystem
+- les8: OOP
+- les9: Json
+- les10: Decorators
+- les11: Repeat OOP
+- les12: Argparse,requests
+- les17: Selenium,Allure
+- les19: UI testing, page object model
+- les22: Selenoid
+- les
+- les
+- les
+- les
+- les
+- les
+- les
+- les
