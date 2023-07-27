@@ -12,8 +12,8 @@
 - les17: Selenium,Allure
 - les19: UI testing, page object model
 - les22: Selenoid
-- les
-- les
+- les23: Subprocess
+- les25: sqlite3
 - les
 - les
 - les
