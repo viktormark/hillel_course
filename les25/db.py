@@ -40,6 +40,7 @@ db.select("SELECT * FROM movie")
 db.close()
 
 
+
 def test_insert_data():
     test_db = Db("test.db")
     test_db.create_table("CREATE TABLE movie (id INTEGER PRIMARY KEY, title TEXT)")
