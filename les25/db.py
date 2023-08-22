@@ -36,7 +36,6 @@ db.insert("""
 """)
 
 db.select("SELECT * FROM movie")
-
 db.close()
 
 
