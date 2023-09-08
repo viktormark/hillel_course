@@ -14,9 +14,6 @@
 - les22: Selenoid
 - les23: Subprocess
 - les25: sqlite3
-- les
-- les
-- les
-- les
-- les
-- les
+- les26: locust
+- les27: multiprocessing
+
